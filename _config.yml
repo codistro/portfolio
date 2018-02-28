@@ -2,4 +2,4 @@ collections:
   projects:
     output: true
 
-baseurl: "portfolio"
+baseurl: "myportfolio"

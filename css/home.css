@@ -1,0 +1,38 @@
+
+body{
+  background-color: #EFF3F4;
+}
+
+h1 {
+  font-family: 'Itim', cursive;
+}
+
+.highlight{
+  font-family: 'Raleway', sans-serif;
+  color: #E31B6D;
+
+}
+
+.has-bg-img {
+  background: url('https://goo.gl/fA3sYH')center;
+  background-size:cover;
+}
+
+.hero.is-primary a.navbar-item:hover{
+  background-color: #333333;
+}
+
+
+.navbar>.container .navbar-menu {
+    height: 50px;
+}
+
+.fa-android, .fa-aws, .fa-python, .fa-node-js{
+  font-size: 180px;
+  padding: 20px;
+  color:black;
+}
+
+.footer{
+    margin-top: 20px;
+}

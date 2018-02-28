@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rajan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  </head>
+  <body>
+    <section class="hero is-primary is-medium has-bg-img">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <h1 class="is-size-4">$RAJAN</h1>
+          </a>
+          <a class="navbar-item is-hidden-desktop" href="#skills">
+            Resume
+          </a>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item">
+              Projects
+            </a>
+            <a class="navbar-item">
+              Skills
+            </a>
+            <a class="navbar-item">
+              Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title" style="font-family: 'Raleway', sans-serif; font-size:40px">
+        Hello, I'm <span class="highlight">Rajan Choudhary</span>
+      </h1>
+      <h2 class="subtitle" style="font-family: 'Raleway', sans-serif; font-size:25px">
+        I'm a Software Engineer.
+      </h2>
+    </div>
+  </div>
+</section>
+
+  <section id="skills" class="container">
+    <p class="has-text-centered is-size-2" style="font-family: 'Itim', cursive; color:#E31B6D;">SKILLS</p>
+    <div class="columns">
+      <div class="column is-3">
+        <div class="card">
+          <div class="card-image has-text-centered">
+              <i class="fab fa-android"></i>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4 class="has-text-centered">Android</h4>
+              <p><progress class="progress is-small" value="85" max="100"></progress></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="card">
+          <div class="card-image has-text-centered">
+              <i class="fab fa-python"></i>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4 class="has-text-centered">Python</h4>
+              <p><progress class="progress is-small" value="80" max="100"></progress></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="card">
+          <div class="card-image has-text-centered">
+              <i class="fab fa-aws"></i>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4 class="has-text-centered">Amazon Web Services</h4>
+              <p><progress class="progress is-small" value="60" max="100"></progress></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="card">
+          <div class="card-image has-text-centered">
+              <i class="fab fa-node-js"></i>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4 class="has-text-centered">Node js</h4>
+              <p><progress class="progress is-small" value="70" max="100"></progress></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <p class="has-text-centered is-size-2" style="font-family: 'Itim', cursive; color:#E31B6D;">Projects</p>
+    <div class="columns">
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image has-text-centered">
+              <h1 class="is-size-2">Current Projects</h1>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <ul>
+                {%for project in site.projects%}
+                  {% if project.category == 'current' %}
+                    <li>{{project.title}}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image has-text-centered">
+              <h1 class="is-size-2">Major Projects</h1>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <ul>
+                {%for project in site.projects%}
+                  {% if project.category == 'major' %}
+                    <li>{{project.title}}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image has-text-centered">
+              <h1 class="is-size-2">Mini Projects</h1>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <ul>
+                {%for project in site.projects%}
+                  {% if project.category == 'mini' %}
+                    <li>{{project.title}}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include footer.html %}
+  </body>
+</html>
